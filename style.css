@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+body {
+  font-family: "Roboto Slab", serif;
+  display: flex;
+  min-height: 100vh;
+}
+/* side bar */
+.sidebar {
+  position: fixed;
+  left: -250px;
+  width: 230px;
+  height: 100%;
+  background: rgb(0, 28, 88);
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+.sidebar ul a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 75px;
+  font-size: 20px;
+  color: whitesmoke;
+  padding-left: 20px;
+  padding-top: 15px;
+  box-sizing: border-box;
+  border-top: 1px solid rgb(0, 28, 88);
+  border-bottom: 1px solid black;
+  transition: 0.5s;
+}
+ul li:hover a {
+  padding-left: 50px;
+}
+.sidebar ul a .fa-question-circle {
+  margin-right: 15px;
+}
+.sidebar ul a .fa-instagram {
+  margin-right: 15px;
+}
+#check {
+  display: none;
+}
+label #btn,
+label #cancel {
+  position: absolute;
+  cursor: pointer;
+}
+label #btn {
+  left: 25px;
+  top: 15px;
+  color: white;
+  font-size: x-large;
+  transition: all 0.5s;
+}
+label #cancel {
+  z-index: 2;
+  left: -195px;
+  top: 17px;
+  font-size: x-large;
+  color: white;
+  transition: all 0.5s ease;
+}
+#check:checked ~ .sidebar {
+  left: 0;
+}
+#check:checked ~ label #btn {
+  left: 250px;
+  opacity: 0;
+  pointer-events: none;
+}
+#check:checked ~ label #cancel {
+  left: 195px;
+}
+/* footer */
+.image {
+  width: 1366px;
+  height: 657px;
+}
+.image img {
+  width: 100%;
+  height: 100%;
+}
+.square {
+  position: absolute;
+  left: 25px;
+  bottom: 25px;
+  width: 250px;
+  height: 90px;
+  background-color: rgba(0, 28, 88, 0.411);
+  backdrop-filter: blur(7px);
+}
+.order {
+  position: absolute;
+  width: 200px;
+  height: 350px;
+  background-color: rgba(128, 128, 128, 0.301);
+  bottom: 45px;
+  left: 50px;
+  backdrop-filter: blur(7px);
+  animation: move 3s;
+}
+@keyframes move {
+  from {
+    transform: translateY(45px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.order p {
+  color: white;
+  font-size: 10px;
+  padding-bottom: 0;
+}
+.order .name p {
+  padding-top: 35px;
+  padding-left: 30px;
+
+  font-size: 13px;
+}
+.order .sushi p {
+  font-size: 20px;
+  padding-left: 30px;
+  padding-bottom: 5px;
+}
+.order .price p {
+  font-size: 13px;
+  padding-left: 30px;
+}
+.order .cost p {
+  padding-left: 30px;
+  font-size: 20px;
+  padding-bottom: 5px;
+}
+.order .deks p {
+  font-size: 10px;
+  padding-left: 30px;
+  padding-bottom: 10px;
+  text-align: left;
+}
+.order .min {
+  position: fixed;
+  padding: 5px 0;
+  margin-left: 7px;
+}
+.order .min ul {
+  display: flex;
+}
+.order .min .circle {
+  width: 35px;
+  height: 35px;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 50px;
+}
+.order .min .circle p {
+  margin-top: 7px;
+  font-size: 15px;
+  margin-left: 13px;
+}
+.order .min ul li {
+  display: block;
+  padding-left: 25px;
+  color: white;
+}
+.order .min .min2 button {
+  font-size: 20px;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: white;
+  margin-top: 5px;
+}
+.order .min .plus2 button {
+  font-size: 20px;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: white;
+  margin-top: 6px;
+}
+
+.order .confirm {
+  position: absolute;
+  width: 50px;
+  height: 20px;
+  background-color: white;
+  margin-top: 55px;
+  margin-left: 130px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.order .confirm:hover {
+  background-color: rgba(0, 49, 155, 0.548);
+}
+.order .confirm:hover p {
+  color: white;
+}
+.order .confirm p {
+  color: black;
+  font-weight: bold;
+  margin-top: 3px;
+  margin-left: 14px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.menu {
+  position: absolute;
+  bottom: 25px;
+  margin-left: 275px;
+  width: 250px;
+  height: 90px;
+  background-color: rgba(128, 128, 128, 0.301);
+  backdrop-filter: blur(7px);
+  border-left: 1px solid white;
+}
+.menu p {
+  margin-top: 33px;
+  margin-left: 100px;
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+}
+.cart {
+  position: absolute;
+  bottom: 25px;
+  margin-left: 525px;
+  width: 250px;
+  height: 90px;
+  background-color: rgba(128, 128, 128, 0.301);
+  backdrop-filter: blur(7px);
+  border-left: 1px solid white;
+}
+.cart p {
+  margin-top: 33px;
+  margin-left: 100px;
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+}
+.payment {
+  position: absolute;
+  bottom: 25px;
+  margin-left: 776px;
+  width: 250px;
+  height: 90px;
+  background-color: rgba(128, 128, 128, 0.301);
+  backdrop-filter: blur(7px);
+  border-left: 1px solid white;
+}
+.payment p {
+  margin-top: 33px;
+  margin-left: 100px;
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+}
